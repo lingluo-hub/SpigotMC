@@ -14,6 +14,12 @@ SpigotMC，也被称为 Spigot，是流行在 Bukkit 服务器模组的一个分
 
 可以前往 [https://squidfunk.github.io/mkdocs-material/getting-started/](https://squidfunk.github.io/mkdocs-material/getting-started/) 了解 Material for MkDocs 的使用。
 
+额外使用的插件: `mkdocs-glightbox`, `jieba`
+
+```bash
+pip install mkdocs-glightbox jieba
+```
+
 ## 加入我们
 
 如果你对本项目感兴趣，并且希望加入我们刷题小分队，欢迎随时提交 [PR](https://github.com/lingluo-hub/SpigotMC/pulls)。请参考如下步骤：
