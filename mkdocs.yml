@@ -1,0 +1,62 @@
+site_name: Spigot 中文开发指南
+repo_url: https://github.com/lingluo-hub/SpigotMC
+repo_name: lingluo-hub/SpigotMC
+copyright: Copyright &copy; 2012 - 2022 SpigotMC Pty. Ltd. && Ling Luo
+
+nav:
+  - 什么是 Spigot:
+    - index.md
+  - 官方文档: 
+    - 用 Gradle Groovy 构建你的 Spigot 插件: official/spigot-gradle.md
+    - 代码简洁之道: official/clean-code.md
+    - 命令别名: official/command-alias.md
+    - Plugin.yml: official/plugin.yml.md
+
+theme:
+  icon:
+    repo: fontawesome/brands/github
+  name: material
+  language: zh
+  palette:
+    - scheme: default
+      primary: green
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    - scheme: slate
+      primary: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    # text: Ubuntu
+    code: JetBrains Mono
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - content.code.annotate
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+plugins:
+  - glightbox
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/lingluo-hub
+      name: Ling Luo on GitHub
