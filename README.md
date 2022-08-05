@@ -22,7 +22,7 @@ pip install mkdocs-glightbox jieba
 
 ## 加入我们
 
-如果你对本项目感兴趣，并且希望加入我们刷题小分队，欢迎随时提交 [PR](https://github.com/lingluo-hub/SpigotMC/pulls)。请参考如下步骤：
+如果你对本项目感兴趣，并且希望加入我们，欢迎随时提交 [PR](https://github.com/lingluo-hub/SpigotMC/pulls)。请参考如下步骤：
 
 1. 将本项目 fork 到你的个人 GitHub 帐户，然后 clone 到你的本地机器；
 2. 进入 leetcode 目录，切换到一个新的分支；

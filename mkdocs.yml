@@ -11,6 +11,7 @@ nav:
     - 代码简洁之道: official/clean-code.md
     - 命令别名: official/command-alias.md
     - Plugin.yml: official/plugin.yml.md
+    - 使用配置 API: official/creating-a-config-file.md
 
 theme:
   icon:
