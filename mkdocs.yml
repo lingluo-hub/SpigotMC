@@ -12,6 +12,7 @@ nav:
     - 命令别名: official/command-alias.md
     - Plugin.yml: official/plugin.yml.md
     - 使用配置 API: official/creating-a-config-file.md
+    - 创建更新检查器: official/creating-an-update-checker-that-checks-for-updates.md
 
 theme:
   icon:
