@@ -13,6 +13,7 @@ nav:
     - Plugin.yml: official/plugin.yml.md
     - 使用配置 API: official/creating-a-config-file.md
     - 创建更新检查器: official/creating-an-update-checker-that-checks-for-updates.md
+    - 创建外部库: official/creating-external-libraries.md
 
 theme:
   icon:
