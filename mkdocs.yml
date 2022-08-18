@@ -1,5 +1,6 @@
 site_name: Spigot 中文开发指南
 repo_url: https://github.com/lingluo-hub/SpigotMC
+edit_uri: edit/main/docs/
 repo_name: lingluo-hub/SpigotMC
 copyright: Copyright &copy; 2012 - 2022 SpigotMC Pty. Ltd. && Ling Luo
 
@@ -58,6 +59,8 @@ markdown_extensions:
 plugins:
   - glightbox
   - search
+  - git-revision-date-localized:
+      enable_creation_date: true
 
 extra:
   social:
