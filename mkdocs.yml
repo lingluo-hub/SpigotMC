@@ -13,6 +13,7 @@ nav:
     - 命令别名: official/command-alias.md
     - Plugin.yml: official/plugin.yml.md
     - 创建一个简单的命令: official/spigot-plugin-development.md
+    - 使用事件 API: official/using-the-event-api.md
     - 使用配置 API: official/creating-a-config-file.md
     - 创建更新检查器: official/creating-an-update-checker-that-checks-for-updates.md
     - 创建外部库: official/creating-external-libraries.md
