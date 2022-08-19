@@ -28,7 +28,7 @@ Many larger servers use Spigot, since they tend to use more resources than an av
 
     为使用 Spigot 的服务器管理员准备或为插件开发者预备运行环境
 
-    [:octicons-arrow-right-24: 开始](official-plugin-using/)
+    [:octicons-arrow-right-24: 开始](official-spigot-using/)
 
 -   :fontawesome-solid-hammer:{ .lg .middle } __官方开发文档__
 
