@@ -7,7 +7,7 @@ hide:
 # 什么是 Spigot
 
 <p align="center">
-  <a href="https://www.spigotmc.org/"><img src="official/images/spigot.png" alt="spigotmc-logo"></a>
+  <a href="https://www.spigotmc.org/"><img src="official-plugin-development/images/spigot.png" alt="spigotmc-logo"></a>
 </p>
 
 SpigotMC, also known simply as Spigot, is a fork of the popular Bukkit server mod. Spigot is meant to increase performance and efficiency, while maintaining compatibility with Bukkit plugins.
