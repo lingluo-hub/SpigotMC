@@ -17,6 +17,7 @@ hide:
 - [创建一个简单的命令](create-a-simple-command.md)
 - [使用事件 API](using-the-event-api.md)
 - [使用配置 API](creating-a-config-file.md)
+- [使用 MongoDB 数据库](using-mongodb.md)
 - [创建更新检查器](creating-an-update-checker-that-checks-for-updates.md)
 - [创建外部库](creating-external-libraries.md)
 - [为 Spigot 创建离线 Javadoc](creating-offline-javadoc-for-the-spigot-api.md)
