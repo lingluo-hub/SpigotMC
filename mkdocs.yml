@@ -7,17 +7,18 @@ copyright: Copyright &copy; 2012 - 2022 SpigotMC Pty. Ltd. && Ling Luo
 nav:
   - 什么是 Spigot:
     - index.md
-  - 官方开发文档: 
-    - 用 Gradle Groovy 构建你的 Spigot 插件: official/spigot-gradle.md
-    - 代码简洁之道: official/clean-code.md
-    - 命令别名: official/command-alias.md
-    - Plugin.yml: official/plugin.yml.md
-    - 创建一个简单的命令: official/create-a-simple-command.md
-    - 使用事件 API: official/using-the-event-api.md
-    - 使用配置 API: official/creating-a-config-file.md
-    - 创建更新检查器: official/creating-an-update-checker-that-checks-for-updates.md
-    - 创建外部库: official/creating-external-libraries.md
-    - 为 Spigot 创建离线 Javadoc: official/creating-offline-javadoc-for-the-spigot-api.md
+  - 官方开发文档:
+    - official-plugin-development/index.md
+    - 用 Gradle Groovy 构建你的 Spigot 插件: official-plugin-development/spigot-gradle.md
+    - 代码简洁之道: official-plugin-development/clean-code.md
+    - 命令别名: official-plugin-development/command-alias.md
+    - Plugin.yml: official-plugin-development/plugin.yml.md
+    - 创建一个简单的命令: official-plugin-development/create-a-simple-command.md
+    - 使用事件 API: official-plugin-development/using-the-event-api.md
+    - 使用配置 API: official-plugin-development/creating-a-config-file.md
+    - 创建更新检查器: official-plugin-development/creating-an-update-checker-that-checks-for-updates.md
+    - 创建外部库: official-plugin-development/creating-external-libraries.md
+    - 为 Spigot 创建离线 Javadoc: official-plugin-development/creating-offline-javadoc-for-the-spigot-api.md
 
 theme:
   icon:
@@ -40,6 +41,7 @@ theme:
     code: JetBrains Mono
   features:
     - navigation.instant
+    - navigation.indexes
     - navigation.tabs
     - navigation.top
     - content.code.annotate
