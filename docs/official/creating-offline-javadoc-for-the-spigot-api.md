@@ -42,3 +42,5 @@ Javadoc 将放在 `Spigot-API/target/site/apidocs` 中。
 如果你把服务器安装在你使用 Java IDE 的同一台电脑上，那么你可以考虑简单地把 IDE 指向你的服务器位置。否则，你可以简单地复制 java 和 javadoc 文件夹（或用 ZIP 压缩），然后在另一个地方使用这些文件夹。
 
 这样做的好处是显而易见的：这将确保你在互联网连接出现问题时也能访问 Javadoc（也可以选择访问源代码）。
+
+[跳转至官网原文 :material-link:](https://www.spigotmc.org/wiki/creating-offline-javadoc-for-the-spigot-api){ .md-button }

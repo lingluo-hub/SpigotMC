@@ -85,3 +85,5 @@ public class UpdateChecker {
 它寻找一个 id 为 `12345` 的资源，并将其版本与 `plugin.yml` 文件中注册的版本进行比较。当然，你需要改变上述方法中的资源 ID。
 
 确保你使用的是 `Consumer` 类的 Java 导入，而不是 Bukkit 的导入： `import java.util.function.Consumer;`
+
+[跳转至官网原文 :material-link:](https://www.spigotmc.org/wiki/creating-an-update-checker-that-checks-for-updates/){ .md-button }

@@ -108,3 +108,5 @@ commands:
 - 当一个无效的 `CommandSender` 试图使用一个命令时（例如当控制台使用/kit命令时），发送一个错误是推荐做法。
 
 现在你已经完成了! 我们希望你学到了一些关于创建命令的基本知识。
+
+[跳转至官网原文 :material-link:](https://www.spigotmc.org/wiki/create-a-simple-command){ .md-button }

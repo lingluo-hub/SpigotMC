@@ -98,3 +98,5 @@ public void onEnable() {
 ```
 现在你就可以开始了!
 你可以使用库中的每一个静态方法。
+
+[跳转至官网原文 :material-link:](https://www.spigotmc.org/wiki/creating-external-libraries/){ .md-button }

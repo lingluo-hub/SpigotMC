@@ -291,3 +291,5 @@ if (!exampleEvent.isCancelled()) {
     Bukkit.getPlayer("Msrules123").sendMessage(exampleEvent.getPlayerName());
 }
 ```
+
+[跳转至官网原文 :material-link:](https://www.spigotmc.org/wiki/using-the-event-api/){ .md-button }

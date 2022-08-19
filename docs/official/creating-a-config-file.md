@@ -111,3 +111,5 @@ public final class TestPlugin extends JavaPlugin implements Listener {
 关于更详细的信息（例如，如何设置更复杂和嵌套的 YAML 结构或使用列表和地图，以及如何创建和使用新的 YAML 文件），请参阅 [Bukkit wiki](https://bukkit.fandom.com/wiki/Configuration_API_Reference)。
 
 如果你想创建和使用自定义文件，你可以使用[现有的 Spigot API](https://www.spigotmc.org/wiki/config-files/)，或者使用像 [BoostedYAML](https://www.spigotmc.org/threads/%E2%9A%A1-boostedyaml-standalone-yaml-library-with-updater-and-comment-support-much-more-5min-setup-%E2%9A%A1.545585/) 这样的外部库来自动处理一切。
+
+[跳转至官网原文 :material-link:]https://www.spigotmc.org/wiki/creating-a-config-file/){ .md-button }
