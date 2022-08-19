@@ -10,6 +10,7 @@ nav:
   - 官方使用文档:
     - official-spigot-using/index.md
     - Spigot 安装: official-spigot-using/spigot-installation.md
+    - Spigot 配置: official-spigot-using/spigot-configuration.md
   - 官方开发文档:
     - official-plugin-development/index.md
     - 用 Gradle Groovy 构建你的 Spigot 插件: official-plugin-development/spigot-gradle.md
@@ -63,7 +64,10 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.keys
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true 
 
 plugins:
   - glightbox

@@ -11,3 +11,4 @@ hide:
 ## 本节目录
 
 - [Spigot 安装](spigot-installation.md)
+- [Spigot 配置](spigot-configuration.md)
