@@ -10,7 +10,7 @@ NoSQL 数据库并不遵循 SQL 数据库的表状结构。相反，许多人使
 
 ## Morphia
 
-除了本教程中所涉及的内容外，还有一种方法可以从 MongoDB 中保存和访问数据，那就是使用一个名为 Morphia 的 API。它是完全可选的，但它使从 Java 对象创建新集合的过程变得非常精简。关于 Spigot 的教程可以在这里找到：https://www.spigotmc.org/wiki/mongodb-with-morphia/
+除了本教程中所涉及的内容外，还有一种方法可以从 MongoDB 中保存和访问数据，那就是使用一个名为 Morphia 的 API。它是完全可选的，但它使从 Java 对象创建新集合的过程变得非常精简。关于 Spigot 的教程可以在这里找到：[结合 Morphia 使用 MongoDB](mongodb-with-morphia.md)
 
 ## 安装数据库
 
