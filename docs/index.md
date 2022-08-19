@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# 什么是 Spigot
+# Spigot 中文开发指南
 
 <p align="center">
   <a href="https://www.spigotmc.org/"><img src="official-plugin-development/images/spigot.png" alt="spigotmc-logo"></a>
@@ -30,11 +30,19 @@ Many larger servers use Spigot, since they tend to use more resources than an av
 
     [:octicons-arrow-right-24: 开始](official-spigot-using/)
 
--   :fontawesome-solid-hammer:{ .lg .middle } __官方开发文档__
+-   :fontawesome-solid-user:{ .lg .middle } __官方开发文档__
 
     ---
 
     为 Spigot 插件开发者准备
+
+    [:octicons-arrow-right-24: 开始](official-plugin-development/)
+
+-   :octicons-code-16:{ .lg .middle } __插件代码参考__
+
+    ---
+
+    帮助开始使用 Spigot API 进行编程，并应作为更大和更多项目的垫脚石
 
     [:octicons-arrow-right-24: 开始](official-plugin-development/)
 

@@ -22,6 +22,8 @@ nav:
     - 创建更新检查器: official-plugin-development/creating-an-update-checker-that-checks-for-updates.md
     - 创建外部库: official-plugin-development/creating-external-libraries.md
     - 为 Spigot 创建离线 Javadoc: official-plugin-development/creating-offline-javadoc-for-the-spigot-api.md
+  - 插件代码参考:
+    - plugin-snippets/index.md
 
 theme:
   icon:

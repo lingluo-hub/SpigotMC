@@ -103,3 +103,5 @@ chmod a+x
 查看[我们的资源部分](http://www.spigotmc.org/resources/)或 [BukkitDev](http://dev.bukkit.org/bukkit-plugins/)，可以找到各种各样的插件，范围从帮助管理到添加全新的游戏模式。如果你在那里找不到任何东西，你可以在 [Spigot 的服务与招标论坛](http://www.spigotmc.org/forums/hiring-developers.55/)或 [Bukkit 的插件需求论坛](http://forums.bukkit.org/forums/plugin-requests.13/)上请求制作一个插件。请务必遵循如何设置请求的准则。
 
 你可以通过将 JAR 文件丢到服务器目录下的插件文件夹中，然后重新启动服务器来添加你的插件。如果不工作或看到错误，请在 [Spigot 论坛](http://www.spigotmc.org/forums/help.40/)上寻求帮助。
+
+[跳转至官网原文 :material-link:](http://www.spigotmc.org/wiki/spigot-installation/){ .md-button }
