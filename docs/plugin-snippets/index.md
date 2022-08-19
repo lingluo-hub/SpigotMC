@@ -17,3 +17,5 @@ hide:
 或者通过[ GitHub 本仓库](https://github.com/lingluo-hub/SpigotMC)提交 PR
 
 ## 本节目录
+
+- [异步处理数据库](asynchronously-working-with-a-database.md)

@@ -27,6 +27,7 @@ nav:
     - 为 Spigot 创建离线 Javadoc: official-plugin-development/creating-offline-javadoc-for-the-spigot-api.md
   - 插件代码参考:
     - plugin-snippets/index.md
+    - 异步处理数据库: plugin-snippets/asynchronously-working-with-a-database.md
 
 theme:
   icon:
