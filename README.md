@@ -21,6 +21,12 @@ pip install jieba
 pip install mkdocs-glightbox mkdocs-git-revision-date-localized-plugin
 ```
 
+### 如何新增一篇文章
+
+1. 在 `docs/` 目录下对应分类下新建名为 `xxxx.md` 的文件
+2. 在对应分类目录下的 `index.md` 的 `## 本节目录` 段落下注册文章位置
+3. 在项目根目录 `mkdocs.yml` 的 `nav:` 字段下对应节点下注册文章位置
+
 ## 加入我们
 
 如果你对本项目感兴趣，并且希望加入我们，欢迎随时提交 [PR](https://github.com/lingluo-hub/SpigotMC/pulls)。请参考如下步骤：
