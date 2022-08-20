@@ -89,7 +89,7 @@ chmod a+x
 
 - [server.properties](https://minecraft.fandom.com/zh/wiki/Server.properties)
 - bukkit.yml
-- spigot.yml
+- [spigot.yml](spigot-configuration.md)
 - 服务器图标
 
 如果服务器工作不正常，请确定你已经进行了端口转发，并且你已经严格按照步骤进行了操作。如果你有问题，你可以在 [Spigot 论坛](http://www.spigotmc.org/forums/help.40/)上创建一个帮助主题，或者到 [Discord](https://www.spigotmc.org/link-forums/discord.95/) 或 [IRC](http://www.spigotmc.org/pages/irc/) 上与我们聊天。

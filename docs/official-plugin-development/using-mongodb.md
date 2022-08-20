@@ -86,7 +86,7 @@ apt-get install mongodb
 ### 选项 1：使用 `findOne()`
 
 ```java
-     public void readPlayer(UUID uuid){
+    public void readPlayer(UUID uuid){
         //让我们建立一个最小的对象，以获得集合 "player "中的所有对象，其中包含字段 "uuid"，其值为uuid（我们正在搜索的内容）。
         DBObject r = new BasicDBObject("uuid", uuid);
         //使用findOne来只获得一个对象!
@@ -107,7 +107,7 @@ apt-get install mongodb
 ### 选项2：使用 DBCursor
 
 ```java
-     public void readPlayer(UUID uuid){
+    public void readPlayer(UUID uuid){
         //让我们建立一个最小的对象，以获得集合 "player "中的所有对象，其中包含字段 "uuid"，其值为uuid（我们正在搜索的内容）。
         DBObject r = new BasicDBObject("uuid", uuid);
         //创建一个游标对象来循环浏览所有的结果。
@@ -140,7 +140,7 @@ apt-get install mongodb
 ### 选项1：更新所有对象
 
 ```java
- public void updatePlayer(UUID uuid, String name, long tokens, String rank) {
+    public void updatePlayer(UUID uuid, String name, long tokens, String rank) {
         DBObject r = new BasicDBObject("uuid", uuid);
         DBObject found = players.findOne(r);
         if (found == null){

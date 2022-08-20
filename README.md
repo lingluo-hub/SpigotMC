@@ -18,7 +18,7 @@ SpigotMC，也被称为 Spigot，是流行在 Bukkit 服务器模组的一个分
 
 ```bash
 pip install jieba 
-pip install mkdocs-glightbox mkdocs-git-revision-date-localized-plugin
+pip install mkdocs-glightbox
 ```
 
 ### 如何新增一篇文章

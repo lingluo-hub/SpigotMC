@@ -95,7 +95,7 @@ public class CommandPlayerInfo implements CommandExecutor {
 现在我们有一个异步任务，我们希望能够将数据传递给它。由于这个运行方法是在命令的其他部分之外，我们需要使这个任务访问的所有变量都是最终变量。将一个变量设为最终变量，就失去了重新赋值的能力，但是，变量上的函数仍然可以如期工作。我们最终得到的代码现在看起来像这样:
 
 ```java
-@Override
+    @Override
     public boolean onCommand(final CommandSender cs, Command cmd, String label, String[] args) {
         if (args.length < 1) {
             cs.sendMessage("Usage:");

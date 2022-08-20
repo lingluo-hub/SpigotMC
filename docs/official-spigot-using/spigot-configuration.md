@@ -18,7 +18,7 @@
 |------|-------|------|------|
 |`whitelist`|"You are not whitelisted on this server!"|String| 当白名单模式被启用时，这是所有未被列入白名单的用户在连接时显示的信息。你可以通过`/whitelist add {username}`把人添加到你的白名单中。|
 |`unknown-command`|"Unknown command. Type "/help" for help."|String|这是在玩家输入未注册/不存在的命令时，将在聊天中显示的信息。|
-|`server-full`|"The server is full!"|String|当服务器 "满员 "时（玩家人数与你的最大槽位相匹配），这就是将显示给被踢/拒绝加入的玩家的信息，直到有更多的席位开放。|
+|`server-full`|"The server is full!"|String|当服务器 "满员 "时（玩家人数与你的最大席位相匹配），这就是将显示给被踢/拒绝加入的玩家的信息，直到有更多的席位开放。|
 |`outdated-client`| "Outdated client! Please use {}"|String|将显示给加入Minecraft的玩家的信息，其版本比你的服务器要早。{}将被替换成服务器的当前版本。|
 |`outdated-server`| "Outdated server! I'm still on {0}"|String|这是将显示给加入Minecraft的玩家的信息，其版本比你的服务器要新。{0}将被替换成服务器的当前版本。|
 |`restart`| "Server is restarting"|String|这是通过`/restart`命令触发服务器重启后将显示给所有在线玩家的信息。|
