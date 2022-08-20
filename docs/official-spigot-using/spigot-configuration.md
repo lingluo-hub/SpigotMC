@@ -198,5 +198,6 @@ Spoiler: 所有成就的清单
     - `ticks-per: hopper-check`: 在2015年3月8日的1.8.3提交中删除，在2017年2月10日的1.11.2提交中重新加入
     - `hunger`：默认值：<br>jump-walk-exhaustion: 0.05<br>jump-sprint-exhaustion: 0.2<br>combat-exhaustion: 0.1<br>regen-exhaustion: 6.0<br>swim-multiplier: 0.01<br>sprint-multiplier: 0.1<br>other-multiplier: 0.0
 
-    [跳转至官网原文 :material-link:](http://www.spigotmc.org/wiki/spigot-configuration){ .md-button }
+
+[跳转至官网原文 :material-link:](http://www.spigotmc.org/wiki/spigot-configuration){ .md-button }
     

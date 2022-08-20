@@ -12,6 +12,7 @@ nav:
     - Spigot 安装: official-spigot-using/spigot-installation.md
     - Spigot 配置: official-spigot-using/spigot-configuration.md
     - 服务器图标: official-spigot-using/server-icon.md
+    - Spigot 命令与权限: official-spigot-using/spigot-commands.md
   - 官方开发文档:
     - official-plugin-development/index.md
     - 用 Gradle Groovy 构建你的 Spigot 插件: official-plugin-development/spigot-gradle.md

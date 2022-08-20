@@ -12,3 +12,5 @@
 
 将 `server-icon.png` 放在服务器的根目录下（与 Spigot 或 `Bungeecord.jar` 文件相同的文件夹，或者如果你的服务器的工作目录已经改变，则为工作目录）。
 你必须在将文件放入该文件夹后重新启动服务器，以便服务器加载它。
+
+[跳转至官网原文 :material-link:](https://www.spigotmc.org/wiki/server-icon/){ .md-button }

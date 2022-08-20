@@ -13,3 +13,4 @@ hide:
 - [Spigot 安装](spigot-installation.md)
 - [Spigot 配置](spigot-configuration.md)
 - [服务器图标](server-icon.md)
+- [Spigot 命令与权限](spigot-commands.md)
