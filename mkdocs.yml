@@ -14,6 +14,9 @@ nav:
     - 服务器图标: official-spigot-using/server-icon.md
     - Spigot 启动参数: official-spigot-using/start-up-parameters.md
     - Spigot 命令与权限: official-spigot-using/spigot-commands.md
+    - 提示、技巧和教程:
+      - official-spigot-using/tips-tricks-tutorials/index.md
+      - 禁用 Netty: official-spigot-using/tips-tricks-tutorials/disabling-netty.md
   - 官方开发文档:
     - official-plugin-development/index.md
     - 用 Gradle Groovy 构建你的 Spigot 插件: official-plugin-development/spigot-gradle.md

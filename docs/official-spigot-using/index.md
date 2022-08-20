@@ -15,3 +15,4 @@ hide:
 - [服务器图标](server-icon.md)
 - [Spigot 启动参数](start-up-parameters.md)
 - [Spigot 命令与权限](spigot-commands.md)
+- [提示、技巧和教程](tips-tricks-tutorials/)
