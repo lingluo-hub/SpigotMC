@@ -30,12 +30,7 @@
 |`disable-saving`|false|Boolean|如果启用，那么服务器将不保存玩家的统计数据或成就。建议强制 *'accommentation.openInventory'*（通过设置为1），以防止成就冻结在玩家的屏幕上。|
 |`disabled`|[ ]|List| 一个禁用的成就列表。在这个列表中的成就在游戏中是无法实现的，也不会显示在成就GUI中，可以通过 'advancement' 按钮（当按下escape时）或按下绑定的键来打开这个菜单（默认为L）。如果所有属于该成就的子成就没有被禁用，禁用一个成就将导致控制台中出现错误。要禁用所有的成就，请将以下列表粘贴到这个选项中。|
 
-Spoiler: 所有成就的清单
-
-=== "折叠"
-
-
-=== "显示"
+??? info "Spoiler: 所有成就的清单"
 
     ```
     - minecraft:story/root

@@ -5,7 +5,7 @@ repo_name: lingluo-hub/SpigotMC
 copyright: Copyright &copy; 2012 - 2022 SpigotMC Pty. Ltd. && Ling Luo
 
 nav:
-  - 什么是 Spigot:
+  - 首页:
     - index.md
   - 官方使用文档:
     - official-spigot-using/index.md
