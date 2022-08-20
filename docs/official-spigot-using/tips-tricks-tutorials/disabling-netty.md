@@ -20,3 +20,5 @@
 ## 为什么我只能在 1138 及以下版本中这样做？
 
 虽然之前 Spigot 重写了 Minecraft 服务器网络引擎以使用 Netty 而不是标准的 vanilla 网络引擎，但随着 Minecraft 1.7 及以上版本的推出，Minecraft 现在默认使用 Netty。由于 Minecraft 与 Netty 的紧密耦合，移除它将使你的服务器无法启动。
+
+[跳转至官网原文 :material-link:](https://www.spigotmc.org/wiki/disabling-netty/){ .md-button }

@@ -19,3 +19,4 @@ hide:
 ## 本节目录
 
 - [异步处理数据库](asynchronously-working-with-a-database.md)
+- [自动销售物品](auto-selling-items.md)

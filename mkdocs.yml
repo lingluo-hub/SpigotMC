@@ -35,6 +35,7 @@ nav:
   - 插件代码参考:
     - plugin-snippets/index.md
     - 异步处理数据库: plugin-snippets/asynchronously-working-with-a-database.md
+    - 自动销售物品: plugin-snippets/auto-selling-items.md
 
 theme:
   icon:
