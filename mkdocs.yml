@@ -9,6 +9,7 @@ nav:
     - index.md
   - 官方使用文档:
     - official-spigot-using/index.md
+    - 构建工具: official-spigot-using/buildtools.md
     - Spigot 安装: official-spigot-using/spigot-installation.md
     - Spigot 配置: official-spigot-using/spigot-configuration.md
     - 服务器图标: official-spigot-using/server-icon.md

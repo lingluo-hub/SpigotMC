@@ -10,7 +10,7 @@ Spigot 是 CraftBukkit 的一个分支，在上面加上了额外的优化和更
 ## 先决条件
 
 1. Java 8 或以上 [[Windows](https://www.java.com/zh-CN/download/), [Ubuntu](https://help.ubuntu.com/community/Java), [CentOS](http://stackoverflow.com/a/20901970), [OS X](https://www.java.com/en/download/)] 。
-2. 按照[ BuildTools wiki 页面](http://spigotmc.org/wiki/buildtools)编译的服务器 jar。(运行 BuildTools 后，你会发现 Spigot/CraftBukkit 的服务器 jar 文件在同一个目录下）。
+2. 按照[ BuildTools wiki 页面](buildtools.md)编译的服务器 jar。(运行 BuildTools 后，你会发现 Spigot/CraftBukkit 的服务器 jar 文件在同一个目录下）。
 3. 将 Spigot/CraftBukkit 服务器 jar 文件复制到你的服务器专用的新目录中。(不要与 BuildTools 所在的文件夹相同！)
 
 ## 安装
