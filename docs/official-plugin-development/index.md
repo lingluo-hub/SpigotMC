@@ -19,6 +19,7 @@ hide:
 - [使用配置 API](creating-a-config-file.md)
 - [使用 MongoDB 数据库](using-mongodb.md)
 - [结合 Morphia 使用 MongoDB](mongodb-with-morphia.md)
+- [配置 MySQL 数据库与插件集成](mysql-database-integration-with-your-plugin.md)
 - [创建更新检查器](creating-an-update-checker-that-checks-for-updates.md)
 - [创建外部库](creating-external-libraries.md)
 - [为 Spigot 创建离线 Javadoc](creating-offline-javadoc-for-the-spigot-api.md)

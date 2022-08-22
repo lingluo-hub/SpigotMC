@@ -29,6 +29,7 @@ nav:
     - 使用配置 API: official-plugin-development/creating-a-config-file.md
     - 使用 MongoDB 数据库: official-plugin-development/using-mongodb.md
     - 结合 Morphia 使用 MongoDB: official-plugin-development/mongodb-with-morphia.md
+    - 配置 MySQL 数据库与插件集成: official-plugin-development/mysql-database-integration-with-your-plugin.md
     - 创建更新检查器: official-plugin-development/creating-an-update-checker-that-checks-for-updates.md
     - 创建外部库: official-plugin-development/creating-external-libraries.md
     - 为 Spigot 创建离线 Javadoc: official-plugin-development/creating-offline-javadoc-for-the-spigot-api.md
@@ -54,7 +55,7 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   font:
-    # text: Ubuntu
+    text: Red Hat Text
     code: JetBrains Mono
   features:
     - navigation.instant
