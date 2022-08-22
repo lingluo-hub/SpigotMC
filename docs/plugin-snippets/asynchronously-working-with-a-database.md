@@ -1,6 +1,6 @@
 ## 开始之前
 
-在这个例子中，我们将使用 MongoDB，但本教程应该可以在没有大量 MongoDB 知识的情况下进行学习。如果你想了解 MongoDB，你可以阅读 [使用 MongoDB 数据库](/official-plugin-development/using-mongodb) 。我们还将创建一个命令，请参阅：[创建一个简单的命令](/official-plugin-development/create-a-simple-command)。
+在这个例子中，我们将使用 MongoDB，但本教程应该可以在没有大量 MongoDB 知识的情况下进行学习。如果你想了解 MongoDB，你可以阅读 [使用 MongoDB 数据库](../official-plugin-development/using-mongodb.md) 。我们还将创建一个命令，请参阅：[创建一个简单的命令](../official-plugin-development/create-a-simple-command.md)。
 
 ## 什么是异步
 
