@@ -20,3 +20,4 @@ hide:
 
 - [异步处理数据库](asynchronously-working-with-a-database.md)
 - [自动销售物品](auto-selling-items.md)
+- [使用配置文件](config-files.md)

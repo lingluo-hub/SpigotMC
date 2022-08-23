@@ -38,6 +38,7 @@ nav:
     - plugin-snippets/index.md
     - 异步处理数据库: plugin-snippets/asynchronously-working-with-a-database.md
     - 自动销售物品: plugin-snippets/auto-selling-items.md
+    - 使用配置文件: plugin-snippets/config-files.md
 
 theme:
   icon:

@@ -213,3 +213,5 @@ BuildTools 中有几个命令行标志。你不需要在默认情况下使用它
 `--compile-if-changed ` 只在 BuildTools 软件库中检测到变化时才编译。这对于需要在构建服务器上依赖 NMS 的项目很有用。
 
 `--remapped ` 在本地 Maven 仓库中安装额外的 Spigot jars，分类器为 remapped-obf 和 remapped-mojang。
+
+[跳转至官网原文 :material-link:](https://www.spigotmc.org/wiki/buildtools/){ .md-button }

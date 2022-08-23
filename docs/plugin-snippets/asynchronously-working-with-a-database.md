@@ -237,3 +237,4 @@ public interface FindOneCallback {
 
 在这个例子中，异步编程的使用可能是矫枉过正的，但是对于像用户加入服务器时的玩家数据加载或每当某些事件发生时更新数据库中的值这样的任务，这是一个非常明智的处理方法。异步编程不仅对 MongoDB 有用，而且可以很容易地用于 SQL、文件读/写、从网站传输或接收数据，以及其他许多事情。
 
+[跳转至官网原文 :material-link:](https://www.spigotmc.org/wiki/asynchronously-working-with-a-database/){ .md-button }
