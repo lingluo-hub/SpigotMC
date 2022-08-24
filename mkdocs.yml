@@ -19,6 +19,7 @@ nav:
       - official-spigot-using/tips-tricks-tutorials/index.md
       - 禁用 Netty: official-spigot-using/tips-tricks-tutorials/disabling-netty.md
       - 排查服务器崩溃: official-spigot-using/tips-tricks-tutorials/isolating-crashes.md
+      - 阻止世界下载者: official-spigot-using/tips-tricks-tutorials/discouraging-users-from-using-map-downloaders.md
   - 官方开发文档:
     - official-plugin-development/index.md
     - 用 Gradle Groovy 构建你的 Spigot 插件: official-plugin-development/spigot-gradle.md
