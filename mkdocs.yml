@@ -35,6 +35,7 @@ nav:
     - 创建外部库: official-plugin-development/creating-external-libraries.md
     - 为 Spigot 创建离线 Javadoc: official-plugin-development/creating-offline-javadoc-for-the-spigot-api.md
     - 向玩家发送标题 - Packets: official-plugin-development/send-title-to-player-packets.md
+    - 设置 WorldEdit API: official-plugin-development/setting-up-the-worldedit-api.md
   - 插件代码参考:
     - plugin-snippets/index.md
     - 异步处理数据库: plugin-snippets/asynchronously-working-with-a-database.md
