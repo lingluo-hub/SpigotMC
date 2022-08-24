@@ -40,3 +40,5 @@
 WorldEdit 的命名空间应该是 com.sk89q.worldedit。
 
 关于如何加载和保存原理图的指南，请看[这里](https://madelinemiller.dev/blog/how-to-load-and-save-schematics-with-the-worldedit-api/)。
+
+[跳转至官网原文 :material-link:](https://www.spigotmc.org/wiki/setting-up-the-worldedit-api/){ .md-button }

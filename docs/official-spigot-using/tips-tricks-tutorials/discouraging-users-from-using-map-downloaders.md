@@ -32,3 +32,5 @@
 - 重新启动服务器
 
 另外，如果你想尝试完全阻止世界下载，可以尝试查找反 WDL 插件。一些 WDL mods 的插件可以在特定的服务器上禁用该 mod!
+
+[跳转至官网原文 :material-link:](https://www.spigotmc.org/wiki/discouraging-users-from-using-map-downloaders/){ .md-button }

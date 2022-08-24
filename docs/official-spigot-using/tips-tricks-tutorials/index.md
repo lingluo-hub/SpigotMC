@@ -15,3 +15,7 @@ hide:
 - [禁用 Netty](disabling-netty.md)
 - [排查服务器崩溃](isolating-crashes.md)
 - [阻止世界下载者](discouraging-users-from-using-map-downloaders.md)
+
+### 教程
+
+- [Spigot Timings](timings.md)
