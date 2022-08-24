@@ -23,3 +23,4 @@ hide:
 - [创建更新检查器](creating-an-update-checker-that-checks-for-updates.md)
 - [创建外部库](creating-external-libraries.md)
 - [为 Spigot 创建离线 Javadoc](creating-offline-javadoc-for-the-spigot-api.md)
+- [向玩家发送标题 - Packets](send-title-to-player-packets.md)

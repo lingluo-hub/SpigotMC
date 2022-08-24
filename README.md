@@ -38,7 +38,3 @@ pip install mkdocs-glightbox
 3. 对项目做出一些变更，然后使用 git add、commit、push 等命令将你的本地变更提交到你的远程 GitHub 仓库；
 4. 将你的变更以 PR 的形式提交过来，项目的维护人员会在第一时间对你的变更进行 review！
 5. 你也可以参考帮助文档 https://help.github.com/cn 了解更多细节。
-
-<p align="center">
-  <a href="https://github.com/lingluo-hub/SpigotMC"><img src="images/how-to-contribute.svg" alt="how-to-contribute"></a>
-</p>
