@@ -19,3 +19,4 @@ hide:
 ### 教程
 
 - [Spigot Timings](timings.md)
+- [禁用结构保存](disabling-structure-saving.md)
