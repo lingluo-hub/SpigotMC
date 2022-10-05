@@ -1,5 +1,7 @@
 # SpigotMC 中文文档
 
+**已停止更新，请移步 https://github.com/lingluo-hub/spigotmc-cn**
+
 [国际站](https://lingluo-hub.github.io/SpigotMC/) | [国内站](https://lingluo-hub.gitee.io/spigotmc/)
 
 SpigotMC，也被称为 Spigot，是流行在 Bukkit 服务器模组的一个分支。Spigot 是为了提高性能和效率，同时保持与 Bukkit 插件的兼容性。
