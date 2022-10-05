@@ -1,0 +1,833 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.0, mkdocs-material-8.5.6" name="generator"/>
+<title>构建工具 - Spigot 中文开发指南</title>
+<link href="../../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Red Hat Text";--md-code-font:"JetBrains Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="green" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="Spigot 中文开发指南" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Spigot 中文开发指南">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Spigot 中文开发指南
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              构建工具
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="green" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lingluo-hub/SpigotMC" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lingluo-hub/SpigotMC
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        首页
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        官方使用文档
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../official-plugin-development/">
+        官方开发文档
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../plugin-snippets/">
+        插件代码参考
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Spigot 中文开发指南" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Spigot 中文开发指南">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Spigot 中文开发指南
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lingluo-hub/SpigotMC" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lingluo-hub/SpigotMC
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../..">首页</a>
+</div>
+<nav aria-label="首页" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          首页
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">官方使用文档</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="官方使用文档" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          官方使用文档
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          构建工具
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        构建工具
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    这是什么
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    先决条件
+  </a>
+<nav aria-label="先决条件" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#windows">
+    Windows
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linux">
+    Linux
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mac">
+    Mac
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    运行构建工具
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    议题和普遍出现的问题
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    故障排除和支持
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    命令行标志
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../spigot-installation/">
+        Spigot 安装
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../spigot-configuration/">
+        Spigot 配置
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../server-icon/">
+        服务器图标
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../start-up-parameters/">
+        Spigot 启动参数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../spigot-commands/">
+        Spigot 命令与权限
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" id="__nav_2_8" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../tips-tricks-tutorials/">提示、技巧和教程</a>
+<label for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="提示、技巧和教程" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+          提示、技巧和教程
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tips-tricks-tutorials/disabling-netty/">
+        禁用 Netty
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tips-tricks-tutorials/isolating-crashes/">
+        排查服务器崩溃
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tips-tricks-tutorials/discouraging-users-from-using-map-downloaders/">
+        阻止世界下载者
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tips-tricks-tutorials/timings/">
+        Spigot Timings
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tips-tricks-tutorials/disabling-structure-saving/">
+        禁用结构保存
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../official-plugin-development/">官方开发文档</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="官方开发文档" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          官方开发文档
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/spigot-gradle/">
+        用 Gradle Groovy 构建你的 Spigot 插件
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/clean-code/">
+        代码简洁之道
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/command-alias/">
+        命令别名
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/plugin.yml/">
+        Plugin.yml
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/create-a-simple-command/">
+        创建一个简单的命令
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/using-the-event-api/">
+        使用事件 API
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/creating-a-config-file/">
+        使用配置 API
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/using-mongodb/">
+        使用 MongoDB 数据库
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/mongodb-with-morphia/">
+        结合 Morphia 使用 MongoDB
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/mysql-database-integration-with-your-plugin/">
+        配置 MySQL 数据库与插件集成
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/creating-an-update-checker-that-checks-for-updates/">
+        创建更新检查器
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/creating-external-libraries/">
+        创建外部库
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/creating-offline-javadoc-for-the-spigot-api/">
+        为 Spigot 创建离线 Javadoc
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/send-title-to-player-packets/">
+        向玩家发送标题 - Packets
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-plugin-development/setting-up-the-worldedit-api/">
+        设置 WorldEdit API
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../plugin-snippets/">插件代码参考</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="插件代码参考" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          插件代码参考
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../plugin-snippets/asynchronously-working-with-a-database/">
+        异步处理数据库
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../plugin-snippets/auto-selling-items/">
+        自动销售物品
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../plugin-snippets/config-files/">
+        使用配置文件
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../plugin-snippets/basic-chat-muting/">
+        基本的聊天静默
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    这是什么
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    先决条件
+  </a>
+<nav aria-label="先决条件" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#windows">
+    Windows
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linux">
+    Linux
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mac">
+    Mac
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    运行构建工具
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    议题和普遍出现的问题
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    故障排除和支持
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    命令行标志
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/lingluo-hub/SpigotMC/edit/main/docs/official-spigot-using/buildtools.md" title="编辑此页">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1>构建工具</h1>
+<h2 id="_1">这是什么</h2>
+<p><code>BuildTools.jar</code> 是我们对构建 Bukkit、CraftBukkit、Spigot 和 Spigot-API 的解决方案。所有这些都是在你的电脑上完成的！一些先决条件的程序是必要的，但下面的说明将指导你完成你需要做的一切。</p>
+<h2 id="_2">先决条件</h2>
+<p>要使用 BuildTools，有两个必要的程序。Git 和 Java。</p>
+<h3 id="windows">Windows</h3>
+<p>下面是让 BuildTools 在 Windows 上运行的手动步骤。</p>
+<ul>
+<li>Git - 为了让 BuildTools 在 Windows 上运行，你需要安装 Git。对于 Windows，它是通过 git-scm 发布的，可以在<a href="http://msysgit.github.io/">这里</a>下载。在你喜欢的地方安装它，它将提供 git bash，用来运行 BuildTools jar。在运行安装程序时，只需一直点击下一步。</li>
+</ul>
+<p><strong>最新版本的 BuildTools 会自动为你下载并安装 Git。只有在遇到问题时才会手动抓取！</strong></p>
+<ul>
+<li>Java - 低于 Minecraft 1.17: - 从<a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">这里</a>下载 JRE 8 并安装。只要在运行安装程序时一直点击下一步就可以了。</li>
+<li>Java - Minecraft 1.17 [.1]: - 从<a href="https://adoptium.net/temurin/releases?version=16">这里</a>下载 OpenJDK 16 并安装。在运行安装程序时继续点击下一步即可。</li>
+<li>Java - Above Minecraft 1.17.1: - 从<a href="https://adoptium.net/temurin/releases?version=17">这里</a>下载 OpenJDK 17 并安装。在运行安装程序时继续点击下一步即可。</li>
+</ul>
+<h3 id="linux">Linux</h3>
+<p>git 和 Java，以及 util 命令，都可以通过你的软件包管理器用一个命令来安装。</p>
+<ul>
+<li>Debian/Ubuntu: <code>sudo apt-get install git openjdk-8-jre-headless</code></li>
+<li>CentOS/RHEL：<code>sudo yum install git java-1.8.0-openjdk-devel</code></li>
+<li>Arch: <code>sudo pacman -S jdk8-openjdk git</code></li>
+</ul>
+<p>Minecraft 1.17[.1]: 你需要至少安装 OpenJDK 16。你可以通过调整上面的命令（如果你的发行版支持的话）或者在<a href="https://www.azul.com/downloads/?package=jdk">这里</a>下载一个第三方发行版来完成。
+在 Minecraft 1.17.1 以上。你需要至少安装 OpenJDK 17。你可以通过调整上面的命令（如果你的发行版支持的话）或者在<a href="https://www.azul.com/downloads/?package=jdk">这里</a>下载一个第三方发行版来完成这个任务。</p>
+<h3 id="mac">Mac</h3>
+<p>Git 可以从以下网站下载：<a href="http://sourceforge.net/projects/git-osx-installer/files/">http://sourceforge.net/projects/git-osx-installer/files/</a></p>
+<p>Java 可能需要从苹果发布的版本中更新，即使以前更新过，也可能需要为外壳的使用进行链接。
+请遵循这里的步骤：<a href="https://gist.github.com/johan/10590467">https://gist.github.com/johan/10590467</a></p>
+<p><strong>Minecraft 1.17[.1]</strong>: 从<a href="https://www.azul.com/downloads/?package=jdk">这里</a>下载 OpenJDK 16 或更高版本并安装。
+<strong>在 Minecraft 1.17.1 以上</strong>, 从<a href="https://www.azul.com/downloads/?package=jdk">这里</a>下载 OpenJDK 17 或更高版本并安装。</p>
+<h2 id="_3">运行构建工具</h2>
+<ol>
+<li>
+<p>从 <a href="https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar">https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar</a> 下载 <code>BuildTools.jar</code>。</p>
+<ol>
+<li>请继续关注 <a href="https://hub.spigotmc.org/jenkins/job/BuildTools">https://hub.spigotmc.org/jenkins/job/BuildTools</a>，以了解任何错误修复和更新。</li>
+<li>如果你想从命令行下载，可以使用第一步中描述的链接，使用 <code>curl -o BuildTools.jar &lt;url&gt;</code> 或 <code>wget -O BuildTools.jar &lt;url&gt;</code>。</li>
+<li>目录路径中的空格或感叹号可能会破坏 BuildTools! 建议删除这些。</li>
+</ol>
+</li>
+<li>
+<p>如果你在 Linux 上，打开你的终端，或者在 Windows 上打开 git bash。</p>
+<ol>
+<li>Git bash 可以在桌面上或开始菜单中以 "git bash" 的名字找到。也可以通过右键点击任何东西来打开它，因为它现在是你上下文菜单中的一个项目。</li>
+</ol>
+</li>
+<li>
+<p>导航到你下载 <code>BuildTools.jar</code> 的地方，或者使用命令行方式将 jar 下载到你的当前目录。</p>
+<ol>
+<li>在 Windows 上，你可以使用 cd 命令来改变目录，或者你可以在 BuildTools.jar 所在的文件夹的空白处点击右键（不要点击 BuildTools.jar 本身），然后点击 "git bash"，这将在你的当前目录中打开它。</li>
+</ol>
+</li>
+<li>
+<p>从终端运行 <code>BuildTools.jar</code>（不要双击 <code>BuildTools.jar</code>），具体操作如下:</p>
+<ol>
+<li>若在 Linux 上，运行 <code>git config --global --unset core.autocrlf</code>，然后在 bash 或其他适当的 shell 中运行 <code>java -jar BuildTools.jar</code>。</li>
+<li>
+<p>若在 Windows 上，在打开的 git bash 窗口中运行以下命令：
+    <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>java -jar BuildTools.jar
+</code></pre></div></p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>你必须拥有 BuildTools #35 或更高版本，旧版本将无法工作。</p>
+</div>
+</li>
+<li>
+<p>若在 Mac 上，运行下面的命令：
+    <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">export</span> <span class="nv">MAVEN_OPTS</span><span class="o">=</span><span class="s2">"-Xmx2G"</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>java -Xmx2G -jar BuildTools.jar
+</code></pre></div></p>
+</li>
+</ol>
+</li>
+<li>
+<p><em>可选</em>（适用于所有操作系统）。</p>
+<ol>
+<li><code>--rev</code> 选项可以用来获取 CraftBukkit/Spigot 的特定 1.8/1.9 版本(<strong>同步于官方发布的 Minecraft 版本</strong>)。</li>
+<li>参见下面的版本，了解可用的选项</li>
+</ol>
+</li>
+<li>
+<p><em>可选</em> 在 Windows 上使用此代码创建一个批处理（.bat）文件，以实现安装过程的自动化：
+    <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nv">@echo</span> <span class="n">off</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">title</span> <span class="n">SpigotMC</span> <span class="n">BuildTools</span> <span class="n">Builder</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">IF</span> <span class="n">NOT</span> <span class="n">EXIST</span> <span class="n">BuildTools</span> <span class="p">(</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="n">mkdir</span> <span class="n">BuildTools</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="p">)</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nb">cd </span><span class="n">BuildTools</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="nb">curl </span><span class="n">-z</span> <span class="n">BuildTools</span><span class="p">.</span><span class="n">jar</span> <span class="n">-o</span> <span class="n">BuildTools</span><span class="p">.</span><span class="n">jar</span> <span class="n">https</span><span class="p">://</span><span class="n">hub</span><span class="p">.</span><span class="n">spigotmc</span><span class="p">.</span><span class="n">org</span><span class="p">/</span><span class="n">jenkins</span><span class="p">/</span><span class="n">job</span><span class="p">/</span><span class="n">BuildTools</span><span class="p">/</span><span class="n">lastSuccessfulBuild</span><span class="p">/</span><span class="n">artifact</span><span class="p">/</span><span class="n">target</span><span class="p">/</span><span class="n">BuildTools</span><span class="p">.</span><span class="n">jar</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="nb">set </span><span class="p">/</span><span class="n">p</span> <span class="n">Input</span><span class="p">=</span><span class="n">Enter</span> <span class="n">the</span> <span class="n">version</span><span class="p">:</span> <span class="p">||</span> <span class="nb">set </span><span class="n">Input</span><span class="p">=</span><span class="n">latest</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="nb">set </span><span class="p">/</span><span class="n">p</span> <span class="n">Java</span><span class="p">=</span><span class="n">Java</span> <span class="n">8</span> <span class="n">or</span> <span class="n">Java</span> <span class="n">16</span> <span class="p">(</span><span class="k">for</span> <span class="n">1</span><span class="p">.</span><span class="n">17</span><span class="p">.</span><span class="n">1</span> <span class="n">only</span><span class="p">)</span> <span class="n">or</span> <span class="n">Java</span> <span class="n">17</span><span class="p">?</span> <span class="p">||</span> <span class="nb">set </span><span class="n">Java</span><span class="p">=</span><span class="n">17</span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="k">if</span> <span class="k">%</span><span class="n">Java</span><span class="p">%==</span><span class="n">8</span> <span class="s2">"C:\Program Files\Java\jre1.8.0_333\bin\java"</span> <span class="n">-jar</span> <span class="n">BuildTools</span><span class="p">.</span><span class="n">jar</span> <span class="p">-</span><span class="n">-rev</span> <span class="k">%</span><span class="n">Input</span><span class="p">%</span>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="k">if</span> <span class="k">%</span><span class="n">Java</span><span class="p">%==</span><span class="n">16</span> <span class="s2">"C:\Program Files\Eclipse Foundation\jdk-16.0.2.7-hotspot\bin\java"</span> <span class="n">-jar</span> <span class="n">BuildTools</span><span class="p">.</span><span class="n">jar</span> <span class="p">-</span><span class="n">-rev</span> <span class="n">1</span><span class="p">.</span><span class="n">17</span><span class="p">.</span><span class="n">1</span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="k">if</span> <span class="k">%</span><span class="n">Java</span><span class="p">%==</span><span class="n">17</span> <span class="s2">"C:\Program Files\Eclipse Adoptium\jdk-17.0.2.8-hotspot\bin\java"</span> <span class="n">-jar</span> <span class="n">BuildTools</span><span class="p">.</span><span class="n">jar</span> <span class="p">-</span><span class="n">-rev</span> <span class="k">%</span><span class="n">Input</span><span class="p">%</span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="nb">cls</span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="k">if</span> <span class="n">NOT</span> <span class="k">%</span><span class="n">Java</span><span class="p">%==</span><span class="n">8</span> <span class="k">if</span> <span class="n">NOT</span> <span class="k">%</span><span class="n">Java</span><span class="p">%==</span><span class="n">17</span> <span class="k">if</span> <span class="n">NOT</span> <span class="k">%</span><span class="n">Java</span><span class="p">%==</span><span class="n">16</span> <span class="nb">echo </span><span class="s2">"Please rerun the .bat file and input 8 or 17 or 16 in java version"</span>
+<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nb">echo </span><span class="s2">"Done!"</span>
+<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="n">pause</span>
+</code></pre></div></p>
+<p>这个批处理脚本将创建一个目录，如果 <code>BuildTools.jar</code> 不存在或有更新的版本，将在该目录中下载。之后，你会被问到你想编译哪个 Spigot 版本，如果你没有定义你想要的版本就按下回车键，它将编译最新的版本。然后它将运行 <code>java -jar BuildTools.jar</code>，参数为 <code>--rev &lt;version&gt;</code>。在很短的时间内（取决于你的网络连接速度和计算机硬件规格），编译后的 <code>spigot-&lt; 版本 &gt;.jar</code> 将在 <code>BuildTools</code>目录中被发现。</p>
+<ul>
+<li>等待它构建你的 jar。几分钟后，你就应该有新鲜的编译过的 jar 了！</li>
+<li>你可以在你运行 BuildTools.jar 的同一目录下找到 CraftBukkit（直到但不包括 1.14 版）和 Spigot（ <code>craftbukkit-1.14.jar</code> 和 <code>spigot-1.14.jar</code>）。你可以在 <code>\Spigot\Spigot-API\target\(（)spigot-api-1.14-R0.1-SNAPSHOT.jar)</code>找到 Spigot-API。要编译 1.14 及以后的 CraftBukkit，你必须在命令中加入 <code>--compile craftbukkit</code> 参数。</li>
+<li>享受你的新服务器吧</li>
+<li>需要帮助来开始运行服务器吗？请看这里: <a href="../spigot-installation/">开始使用</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="_4">议题和普遍出现的问题</h2>
+<div class="admonition question">
+<p class="admonition-title"><code>BuildData/bin</code> 中缺少 <code>jacobe.exe</code> 或 <code>jacobe</code> 的错误</p>
+<p>更新 BuildTools.jar</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Buildtools 出现错误 <code>java.io.FileNotFoundException: BuildData/mappings/bukkit-1.8-cl.csrg</code> </p>
+<p>更新到最新的 BuildTools 以解决这个问题</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">线程 "main" 中出现异常 <code>org.eclipse.jgit.api.errors.TransportException</code></p>
+<p>BuildTools 在建立与 git 仓库的安全连接时遇到困难，这很可能是由于你的杀毒软件（特别是 Malwarebytes）阻止了连接。请在你的 AV 程序中把 https://hub.spigotmc.org 列入白名单。</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Spigot 的 applyPatches.sh 说 <code>/bin/bash^M: bad interpreter</code></p>
+<p><em>待补充</em></p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Spigot 的 applyPatches.sh 说 <code>line 2: $'\r': command not found</code></p>
+<ul>
+<li>当你启用了 git 的 autocrlf 时，这种情况会在 Linux 上发生（偶尔也会在 Windows 上发生）。要解决这个问题，可以运行 <code>git config --global --unset core.autocrlf</code>，然后重新拉动/重新运行 BuildTools。</li>
+<li>在 Windows 上，当使用内置的命令提示符（cmd.exe）时可能会出现这种情况。要解决这个问题，请改用不同的终端，如 Git Bash。</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Spigot 的 applyPatches.sh 说 <code>fatal: sha1 information is lacking or useless</code></p>
+<p><em>待补充</em></p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Spigot 的 applyPatches.sh 说 <code>Patch failed at ...</code></p>
+<ul>
+<li>如果 git 的 autocrlf 设置为 false（或未设置），这种情况会在 Windows 上发生。要解决这个问题，请运行 <code>git config --global --replace-all core.autocrlf true</code> 并重新拉动/运行 BuildTools。</li>
+<li>如果在 linux 上，运行 <code>git config --global --unset core.autocrlf</code> 并重新拉取/重新运行 BuildTools。</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">java.lang.RuntimeException: Error running command, return status !=0</p>
+<p>如果你是在 Linux 上，请设置环境变量。SHELL 为 /usr/bin/bash，在运行 BuildTools 前执行此命令：<code>export set SHELL="/usr/bin/bash"</code>。当你没有使用 bash 作为默认的 shell 时，就会发生这种情况。</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Failed to create log file: BuildTools.log.txt</p>
+<p><em>待补充</em></p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Exception in thread "main" org.eclipse.jgit.api.errors.JGitInternalException: Creating directories...</p>
+<p>确保你对运行 BuildTools 的目录有写入权限。</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">[ERROR] ... The import gnu.trove.... cannot be resolved</p>
+<ul>
+<li>已知 VIPRE 杀毒软件会导致这个问题。其他杀毒软件也有可能导致相同或类似的问题。禁用杀毒软件并再次运行 BuildTools。</li>
+<li>如果禁用杀毒软件后问题仍然存在，您可能需要通过删除 Windows 用户文件夹中的<code>.m2</code> 文件夹（Win+R 并打开 <code>%userprofile%</code>）来清除本地 Maven 资源库，然后执行 BuildTools 的清洁运行（在再次运行前删除其先前创建的所有文件和文件夹）。</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">(针对 Windows 10 用户）... The import gnu.trove.... cannot be resolved</p>
+<ul>
+<li>在 Windows 10 上的 64 位版本的 Git 有一个已知的问题，导致这个错误。解除 64 位版本的 Git，然后下载并安装 32 位版本，重新运行 BuildTools。</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">[ERROR] Exception in thread "main" org.eclipse.jgit.api.errors.JGitInternalException: Invalid ref origin/master specified</p>
+<p>这似乎是随机发生的。删除 <code>BuildTools.jar</code> 创建的所有文件并重新开始。</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">(对于 Mac OS X 10.11 El Capitan 用户）xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun</p>
+<p>如果你从以前的 OS X 版本升级，El Capitan 会破坏 Xcode 的安装。要解决这个问题，请运行 <code>xcode-select --install</code> 并重新拉取/重新运行 BuildTools。</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Git bash for Windows 不让我选择文本</p>
+<ul>
+<li>右击 git bash 的左上角 &gt;  properties &gt; enable QuickEdit mode &gt; OK</li>
+<li>左键拖动选择，右键点击一次复制。</li>
+<li>你也可以右键点击一次来粘贴。</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">我可以在 CI 服务器上构建这个吗？</p>
+<p>是的，能够运行简单 bash 命令的 CI 服务器可以构建这些罐子。运行下面的命令:
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar -O BuildTools.jar <span class="o">&amp;&amp;</span> java -jar BuildTools.jar
+</code></pre></div>
+请记住，这些构建只能用于私人用途，不应公开发布或访问。</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">java.security.InvalidAlgorithmParameterException: the trustAnchors parameter must be non-empty</p>
+<ul>
+<li>你的服务器上缺少 Java 证书，或者防火墙/杀毒软件阻止了你的连接。</li>
+<li>安装 ca-certificates-java 或用 <code>--disable-certificate-check</code> 参数运行。</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">error: Your local changes to the following files would be overwritten by merge</p>
+<ul>
+<li>你可能是在一个被某些外部软件同步的文件夹中运行 BuildTools，试试一个没有同步的文件夹。</li>
+<li>有人发现，Windows 10 会自动在桌面文件夹上做一些同步工作，尽量避免使用这个文件夹，而使用一个单独的文件夹。</li>
+</ul>
+</div>
+<div class="admonition question">
+<p class="admonition-title">org.eclipse.jgit.errors.RepositoryNotFoundException: repository not found</p>
+<p>BuildTools 在之前运行时被中止了。删除该文件夹中的其他文件并再次运行 Buildtools。</p>
+</div>
+<h2 id="_5">故障排除和支持</h2>
+<p>如果你在运行 BuildTools 时仍然有问题，你可以在 <a href="http://www.spigotmc.org/pages/irc/">IRC</a> 上询问，或者查看 <a href="https://hub.spigotmc.org/jira/browse/BUILDTOOLS/?selectedTab=com.atlassian.jira.jira-projects-plugin:summary-panel">Ticket</a>，看看你的问题是否已经存在。</p>
+<p>要在 Debian Stretch 上运行 BuildTools，你可能需要使用以下代码:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>$ git config --global --unset core.autocrlf
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>$ <span class="nb">export</span> <span class="nv">_JAVA_OPTIONS</span><span class="o">=</span><span class="s2">"-Djavax.net.ssl.trustStorePassword=changeit"</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>$ java -jar BuildTools.jar
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>请注意，建议将编译后的 jar 移到 BuildTools 文件夹之外（例如移到你的服务器文件夹）来运行你的服务器。不这样做可能会在将来弄乱 buildtools 文件夹。</p>
+</div>
+<h2 id="_6">命令行标志</h2>
+<p>BuildTools 中有几个命令行标志。你不需要在默认情况下使用它们中的任何一个。所有这些都在下面列出：</p>
+<p><code>--help</code> 显示控制台帮助。BuildTools 将在之后退出。</p>
+<p><code>--disable-certificate-check</code> 禁用 HTTPS 证书检查。</p>
+<p><code>--disable-java-check</code> BuildTools 不会检查 Java版本。</p>
+<p><code>--dont-update</code> BuildTools 不会从 Gi t中获取更新。</p>
+<p><code>--skip-compile</code> 跳过编译。</p>
+<p><code>--generate-source</code> 生成源代码 jar。注意：只为 Bukkit 生成源码。</p>
+<p><code>--generate-docs</code> 生成 JavaDoc jar。注意: JavaDoc 只为 Bukkit 生成。</p>
+<p><code>--dev</code> 禁用 BuildTools 版本检查、Java 版本检查和 MC 版本查询。只构建实际的构建环境。</p>
+<p><code>--output-dir</code> 最终的jar输出目录。需要一个现有目录的文件路径参数。默认为 <code>BuildTools.jar</code> 所在的目录。</p>
+<p><code>--rev</code> 要构建的版本。需要一个版本参数。默认为最新的可用版本。</p>
+<p><code>--compile craftbukkit</code> 构建 CraftBukkit。由于 BuildTools 默认情况下不会构建 CraftBukkit，这使得 BuildTools 构建 CraftBukkit。</p>
+<p><code>--compile-if-changed</code> 只在 BuildTools 软件库中检测到变化时才编译。这对于需要在构建服务器上依赖 NMS 的项目很有用。</p>
+<p><code>--remapped</code> 在本地 Maven 仓库中安装额外的 Spigot jars，分类器为 remapped-obf 和 remapped-mojang。</p>
+<p><a class="md-button" href="https://www.spigotmc.org/wiki/buildtools/">跳转至官网原文 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"></path></svg></span></a></p>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 官方使用文档" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                上一页
+              </span>
+              官方使用文档
+            </div>
+</div>
+</a>
+<a aria-label="下一页: Spigot 安装" class="md-footer__link md-footer__link--next" href="../spigot-installation/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                下一页
+              </span>
+              Spigot 安装
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2012 - 2022 SpigotMC Pty. Ltd. &amp;&amp; Ling Luo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/lingluo-hub" rel="noopener" target="_blank" title="Ling Luo on GitHub">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", "navigation.tabs", "navigation.top", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+</html>

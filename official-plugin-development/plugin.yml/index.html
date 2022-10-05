@@ -1,0 +1,1193 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.0, mkdocs-material-8.5.6" name="generator"/>
+<title>Plugin.yml - Spigot 中文开发指南</title>
+<link href="../../assets/stylesheets/main.20d9efc8.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Red+Hat+Text:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Red Hat Text";--md-code-font:"JetBrains Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gdesc-inner { font-size: 0.75rem; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="green" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="Spigot 中文开发指南" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Spigot 中文开发指南">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Spigot 中文开发指南
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Plugin.yml
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="" data-md-color-media="" data-md-color-primary="green" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lingluo-hub/SpigotMC" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lingluo-hub/SpigotMC
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        首页
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../official-spigot-using/">
+        官方使用文档
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../">
+        官方开发文档
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../plugin-snippets/">
+        插件代码参考
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Spigot 中文开发指南" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Spigot 中文开发指南">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Spigot 中文开发指南
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/lingluo-hub/SpigotMC" title="前往仓库">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    lingluo-hub/SpigotMC
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../..">首页</a>
+</div>
+<nav aria-label="首页" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          首页
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../official-spigot-using/">官方使用文档</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="官方使用文档" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          官方使用文档
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-spigot-using/buildtools/">
+        构建工具
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-spigot-using/spigot-installation/">
+        Spigot 安装
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-spigot-using/spigot-configuration/">
+        Spigot 配置
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-spigot-using/server-icon/">
+        服务器图标
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-spigot-using/start-up-parameters/">
+        Spigot 启动参数
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-spigot-using/spigot-commands/">
+        Spigot 命令与权限
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_8" id="__nav_2_8" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../official-spigot-using/tips-tricks-tutorials/">提示、技巧和教程</a>
+<label for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="提示、技巧和教程" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+          提示、技巧和教程
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-spigot-using/tips-tricks-tutorials/disabling-netty/">
+        禁用 Netty
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-spigot-using/tips-tricks-tutorials/isolating-crashes/">
+        排查服务器崩溃
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-spigot-using/tips-tricks-tutorials/discouraging-users-from-using-map-downloaders/">
+        阻止世界下载者
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-spigot-using/tips-tricks-tutorials/timings/">
+        Spigot Timings
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../official-spigot-using/tips-tricks-tutorials/disabling-structure-saving/">
+        禁用结构保存
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">官方开发文档</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="官方开发文档" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          官方开发文档
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../spigot-gradle/">
+        用 Gradle Groovy 构建你的 Spigot 插件
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clean-code/">
+        代码简洁之道
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../command-alias/">
+        命令别名
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Plugin.yml
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Plugin.yml
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    必要的属性
+  </a>
+<nav aria-label="必要的属性" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#main">
+    main
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#name">
+    name
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#version">
+    version
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    可选的属性
+  </a>
+<nav aria-label="可选的属性" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description">
+    description
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api-version">
+    api-version
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#load">
+    load
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#author">
+    author
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authors">
+    authors
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#website">
+    website
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#depend">
+    depend
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prefix">
+    prefix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#softdepend">
+    softdepend
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#loadbefore">
+    loadbefore
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#libraries">
+    libraries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#commands">
+    commands
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permissions">
+    permissions
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    命令
+  </a>
+<nav aria-label="命令" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description_1">
+    description
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aliases">
+    aliases
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permission">
+    permission
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permission-message">
+    permission-message
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usage">
+    usage
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    权限
+  </a>
+<nav aria-label="权限" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description_2">
+    description
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#default">
+    default
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#children">
+    children
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    示例
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    注解
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../create-a-simple-command/">
+        创建一个简单的命令
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../using-the-event-api/">
+        使用事件 API
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../creating-a-config-file/">
+        使用配置 API
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../using-mongodb/">
+        使用 MongoDB 数据库
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mongodb-with-morphia/">
+        结合 Morphia 使用 MongoDB
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mysql-database-integration-with-your-plugin/">
+        配置 MySQL 数据库与插件集成
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../creating-an-update-checker-that-checks-for-updates/">
+        创建更新检查器
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../creating-external-libraries/">
+        创建外部库
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../creating-offline-javadoc-for-the-spigot-api/">
+        为 Spigot 创建离线 Javadoc
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../send-title-to-player-packets/">
+        向玩家发送标题 - Packets
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../setting-up-the-worldedit-api/">
+        设置 WorldEdit API
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../plugin-snippets/">插件代码参考</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="插件代码参考" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          插件代码参考
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../plugin-snippets/asynchronously-working-with-a-database/">
+        异步处理数据库
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../plugin-snippets/auto-selling-items/">
+        自动销售物品
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../plugin-snippets/config-files/">
+        使用配置文件
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../plugin-snippets/basic-chat-muting/">
+        基本的聊天静默
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    必要的属性
+  </a>
+<nav aria-label="必要的属性" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#main">
+    main
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#name">
+    name
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#version">
+    version
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+    可选的属性
+  </a>
+<nav aria-label="可选的属性" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description">
+    description
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#api-version">
+    api-version
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#load">
+    load
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#author">
+    author
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authors">
+    authors
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#website">
+    website
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#depend">
+    depend
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prefix">
+    prefix
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#softdepend">
+    softdepend
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#loadbefore">
+    loadbefore
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#libraries">
+    libraries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#commands">
+    commands
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permissions">
+    permissions
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+    命令
+  </a>
+<nav aria-label="命令" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description_1">
+    description
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#aliases">
+    aliases
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permission">
+    permission
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#permission-message">
+    permission-message
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#usage">
+    usage
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+    权限
+  </a>
+<nav aria-label="权限" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description_2">
+    description
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#default">
+    default
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#children">
+    children
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+    示例
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+    注解
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/lingluo-hub/SpigotMC/edit/main/docs/official-plugin-development/plugin.yml.md" title="编辑此页">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1>Plugin.yml</h1>
+<p><code>plugin.yml</code> 是一个包含你的插件信息的文件。没有这个文件，你的插件将无法工作。它由一组属性组成，每个属性都定义在一个新的行上，没有缩进。</p>
+<p>所有的属性都是区分大小写的。</p>
+<h2 id="_1">必要的属性</h2>
+<p>有三个属性是 <code>plugin.yml</code> 文件被认为是有效的。</p>
+<h3 id="main"><code>main</code></h3>
+<ul>
+<li>这个属性指向你的插件的类，它扩展了 JavaPlugin。</li>
+<li>这必须包含完整的命名空间，包括类文件本身。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nt">main</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">org.spigotmc.testplugin.Test</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="name"><code>name</code></h3>
+<ul>
+<li>这个属性是你的插件的名称。</li>
+<li><em>必须</em>由所有字母数字字符和下划线组成（a-z,A-Z,0-9,_）。</li>
+<li>用于确定插件的数据文件夹的名称。</li>
+<li>推荐的做法是将你的 jar 命名为与此相同（例如：MyPlugin.jar）。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MyPlugin</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="version"><code>version</code></h3>
+<ul>
+<li>你的插件的版本。</li>
+<li>最常见的版本格式是<a href="https://semver.org/">语义版本</a>，写成 MAJOR.MINOR.PATCH（例如：1.4.1或9.12.4）。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.4.1</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="_2">可选的属性</h2>
+<h3 id="description"><code>description</code></h3>
+<ul>
+<li>对你的插件所提供的功能进行人性化的描述。</li>
+<li>该描述可以有多行。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">This plugin does so much stuff it can't be contained!</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="api-version"><code>api-version</code></h3>
+<ul>
+<li>你想使用的 API 的版本。</li>
+<li>1.13、1.14、1.15、1.16、1.17、1.18 和 1.19 是可用版本。</li>
+<li>这将向服务器发出信号，表明你的插件在编码时已经考虑到了特定的服务器版本，它不应该应用任何形式的向后兼容措施。因此，你还需要确保你的代码编程时考虑到了对旧配置、数据等的读取。每个服务器版本可以决定如何实现兼容性，未知或未来的版本将阻止插件启用。从 1.14 版本开始，仍然允许使用 <code>api-version 1.13</code> 然而未来的版本可能会基于这个版本放弃向后支持。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">api-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.18</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="load"><code>load</code></h3>
+<ul>
+<li>你想使用的API的版本。明确说明插件应该在什么时候被加载。如果不提供将默认为 <code>POSTWORLD</code>。</li>
+<li>有两个可能的值。<code>STARTUP</code> 和 <code>POSTWORLD</code>。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nt">load</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTWORLD</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="author"><code>author</code></h3>
+<ul>
+<li>唯一标识这个插件的开发者。</li>
+<li>在一些服务器错误信息中使用，以提供有用的反馈信息，说明发生错误时应与谁联系。</li>
+<li>建议使用 SpigotMC.org 论坛或电子邮件地址。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">md_5</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="authors"><code>authors</code></h3>
+<ul>
+<li>如果是一个合作项目，允许你列出多个作者。</li>
+<li>必须是有效的 <a href="https://zh.wikipedia.org/wiki/YAML#Lists">YAML 列表格式</a>。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nt">authors</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">md_5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">thinkofdeath</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="website"><code>website</code></h3>
+<ul>
+<li>该插件的或作者的网站。</li>
+<li>如果你没有专门的网站，建议链接到该插件所在的页面。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="nt">website</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">www.spigotmc.org</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="depend"><code>depend</code></h3>
+<ul>
+<li>插件依赖列表。</li>
+<li>必须是有效的 <a href="https://zh.wikipedia.org/wiki/YAML#Lists">YAML 列表格式</a>。</li>
+<li>使用所需插件的名称属性，以指定依赖关系。</li>
+<li>如果这里列出的任何插件没有找到，你的插件将无法加载。</li>
+<li>如果多个插件互相列出依赖关系，以至于没有插件没有可加载的依赖关系，那么所有的插件都会加载失败。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">depend</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">WorldEdit</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Towny</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="prefix"><code>prefix</code></h3>
+<ul>
+<li>控制台日志所使用的名称，而不是插件的名称。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Testing</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="softdepend"><code>softdepend</code></h3>
+<ul>
+<li>一个插件的列表，这些插件是你的插件拥有完整功能所必需的。</li>
+<li>必须是有效的 <a href="https://zh.wikipedia.org/wiki/YAML#Lists">YAML 列表格式</a>。</li>
+<li>使用所需插件的名称属性，以指定依赖性。</li>
+<li>你的插件将在这里列出的任何插件之后加载。</li>
+<li>循环软依赖会被任意加载。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nt">softdepend</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">Essentials</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">AnotherPlugin</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="loadbefore"><code>loadbefore</code></h3>
+<ul>
+<li>一个应该在此插件之后加载的插件列表。</li>
+<li>必须是有效的 <a href="https://zh.wikipedia.org/wiki/YAML#Lists">YAML 列表格式</a>。</li>
+<li>处理方法是，如果列出的插件软依赖于这个插件。</li>
+<li>使用所需插件的名称属性来指定目标。</li>
+<li>你的插件将在这里列出的任何插件之前加载。</li>
+<li>循环软依赖会被任意加载。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nt">loadbefore</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">OnePlugin</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">AnotherPlugin</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="libraries"><code>libraries</code></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Library loading 仍然是一个<a href="https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/plugin/PluginDescriptionFile.html#getLibraries()">预览功能</a>。</p>
+</div>
+<ul>
+<li>您的插件需要的库列表，可以从 Maven Central 加载。</li>
+<li>有助于减少插件的大小并消除重定位的需要。</li>
+<li>拟用于大型非 Minecraft 的依赖性。专门的库仍然应该被遮蔽和重新定位。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="nt">libraries</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">com.squareup.okhttp3:okhttp:4.9.0</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="commands"><code>commands</code></h3>
+<ul>
+<li>插件希望注册的命令的名称，以及一个可选的命令属性列表。</li>
+<li>该命令名称不应包含发布命令所需的前缀 '/'。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="nt">commands</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="nt">flagrate</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span><span class="p p-Indicator">[</span><span class="nv">optional command attributes</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="permissions"><code>permissions</code></h3>
+<ul>
+<li>该插件希望注册的权限。每个节点代表一个要注册的权限。</li>
+<li>每个权限可以有多个属性。</li>
+<li>权限注册是可选的，也可以从代码中完成。</li>
+<li>权限注册允许你设置描述、默认值和上下级关系。</li>
+<li>权限名称应该保持在 <code>&lt;pluginname&gt;.[category].[category].&lt;permission&gt;</code> 的风格上。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="nt">permissions</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">    </span><span class="nt">inferno.*</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">    </span><span class="p p-Indicator">[</span><span class="nv">optional permission attributes</span><span class="p p-Indicator">]</span><span class="w"></span>
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="nt">inferno.flagate</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w">    </span><span class="p p-Indicator">[</span><span class="nv">optional permission attributes</span><span class="p p-Indicator">]</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="_3">命令</h2>
+<p>一个命令块以命令的名称开始，然后有一个可选的属性列表。</p>
+<h3 id="description_1"><code>description</code></h3>
+<ul>
+<li>对该命令所做工作的简短描述。</li>
+<li>可以和 <code>/help</code> 一起使用</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A simple description.</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="aliases"><code>aliases</code></h3>
+<ul>
+<li>用户可以使用的替代命令名称。</li>
+<li>你可以指定任何一个或多个别名。</li>
+<li>如果你指定一个以上的别名，它们必须是有效的 <a href="https://zh.wikipedia.org/wiki/YAML#Lists">YAML 列表格式</a>。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="nt">aliases</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">foobar</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">fubar</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># (1)!</span><span class="w"></span>
+</code></pre></div>
+<ol>
+<li>或者是 <code>aliases: foobar</code></li>
+</ol>
+</div>
+<h3 id="permission"><code>permission</code></h3>
+<ul>
+<li>使用该命令所需的最基本的权限节点。</li>
+<li>这个权限节点可以用来确定一个用户是否应该能够看到这个命令。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="nt">permission</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test.foo</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="permission-message"><code>permission-message</code></h3>
+<ul>
+<li>如果用户没有使用该命令的必要权限，将向其显示无权限信息。</li>
+<li>你可以使用空引号来表示不应显示任何内容。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="nt">permission-message</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">You do not have permission to use this command.</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="usage"><code>usage</code></h3>
+<ul>
+<li>关于如何使用该命令的简短描述。</li>
+<li>当插件的命令处理程序（通常是 <code>onCommand</code>）没有返回 <code>true</code> 时，会显示给发出命令的人。</li>
+<li><code>&lt;command&gt;</code> 是一个宏，在它出现的地方会被替换成发出的命令。</li>
+<li>要使用字符串 "Usage:" (例如: usage: Usage: /test command)，用双引号包围用法标签后的文本。(例如：usage: "Usage: /test command")</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="nt">usage</span><span class="p">:</span><span class="w"> </span><span class="s">"Usage:</span><span class="nv"> </span><span class="s">/&lt;command&gt;</span><span class="nv"> </span><span class="s">[test|stop]"</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="_4">权限</h2>
+<p>一个权限块以权限的名称开始，后面是属性的节点。</p>
+<h3 id="description_2"><code>description</code></h3>
+<ul>
+<li>对该权限的简短描述。</li>
+<li>允许程序性访问，并帮助服务器管理员。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Allows you to use the command /test</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h3 id="default"><code>default</code></h3>
+<ul>
+<li>设置权限的默认值。</li>
+<li>如果节点不存在, 权限默认为 <code>op</code>.</li>
+<li>允许的默认值是：<code>true</code>, <code>false</code>, <code>op</code>, <code>not op</code></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">说明</p>
+<ul>
+<li>true 默认将总是授予玩家该权限。</li>
+<li>false 默认不会授予玩家权限。</li>
+<li>op 如果玩家是管理员，默认为 true。</li>
+<li>not op 是与 op 相反的行为。</li>
+</ul>
+</div>
+<h3 id="children"><code>children</code></h3>
+<ul>
+<li>允许你为权限设置子节点。子节点是权限名称。</li>
+<li>每个子节点必须设置为真或假。</li>
+<li><code>true</code> 的子节点继承父权限。</li>
+<li><code>false</code> 的子节点继承反向的父权限。</li>
+<li>也可以包含其他权限节点。</li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">例如</p>
+<p>这些数值不是本文中使用的数值。它们只是为了说明。</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="nt">permissions</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="nt">test.all</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-23-3" id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-23-4" id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="w">    </span><span class="nt">test.foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<a href="#__codelineno-23-5" id="__codelineno-23-5" name="__codelineno-23-5"></a><span class="w">    </span><span class="nt">test.bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+</code></pre></div>
+</div>
+<h2 id="_5">示例</h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="nt">main</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">org.spigotmc.annotationtest.Test</span><span class="w"></span>
+<a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestPlugin</span><span class="w"></span>
+<a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">'1.0'</span><span class="w"></span>
+<a href="#__codelineno-24-4" id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A test plugin</span><span class="w"></span>
+<a href="#__codelineno-24-5" id="__codelineno-24-5" name="__codelineno-24-5"></a><span class="nt">load</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSTWORLD</span><span class="w"></span>
+<a href="#__codelineno-24-6" id="__codelineno-24-6" name="__codelineno-24-6"></a><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">md_5</span><span class="w"></span>
+<a href="#__codelineno-24-7" id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="nt">website</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">spigotmc.org</span><span class="w"></span>
+<a href="#__codelineno-24-8" id="__codelineno-24-8" name="__codelineno-24-8"></a><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Testing</span><span class="w"></span>
+<a href="#__codelineno-24-9" id="__codelineno-24-9" name="__codelineno-24-9"></a><span class="nt">depend</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-24-10" id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WorldEdit</span><span class="w"></span>
+<a href="#__codelineno-24-11" id="__codelineno-24-11" name="__codelineno-24-11"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Towny</span><span class="w"></span>
+<a href="#__codelineno-24-12" id="__codelineno-24-12" name="__codelineno-24-12"></a><span class="nt">softdepend</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-24-13" id="__codelineno-24-13" name="__codelineno-24-13"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FAWE</span><span class="w"></span>
+<a href="#__codelineno-24-14" id="__codelineno-24-14" name="__codelineno-24-14"></a><span class="nt">loadbefore</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-24-15" id="__codelineno-24-15" name="__codelineno-24-15"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Essentials</span><span class="w"></span>
+<a href="#__codelineno-24-16" id="__codelineno-24-16" name="__codelineno-24-16"></a><span class="nt">commands</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-24-17" id="__codelineno-24-17" name="__codelineno-24-17"></a><span class="w">  </span><span class="nt">foo</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-24-18" id="__codelineno-24-18" name="__codelineno-24-18"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Foo command</span><span class="w"></span>
+<a href="#__codelineno-24-19" id="__codelineno-24-19" name="__codelineno-24-19"></a><span class="w">    </span><span class="nt">aliases</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-24-20" id="__codelineno-24-20" name="__codelineno-24-20"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foobar</span><span class="w"></span>
+<a href="#__codelineno-24-21" id="__codelineno-24-21" name="__codelineno-24-21"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">fubar</span><span class="w"></span>
+<a href="#__codelineno-24-22" id="__codelineno-24-22" name="__codelineno-24-22"></a><span class="w">    </span><span class="nt">permission</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test.foo</span><span class="w"></span>
+<a href="#__codelineno-24-23" id="__codelineno-24-23" name="__codelineno-24-23"></a><span class="w">    </span><span class="nt">permission-message</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">You do not have permission!</span><span class="w"></span>
+<a href="#__codelineno-24-24" id="__codelineno-24-24" name="__codelineno-24-24"></a><span class="w">    </span><span class="nt">usage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/&lt;command&gt; [test|stop]</span><span class="w"></span>
+<a href="#__codelineno-24-25" id="__codelineno-24-25" name="__codelineno-24-25"></a><span class="nt">permissions</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-24-26" id="__codelineno-24-26" name="__codelineno-24-26"></a><span class="w">  </span><span class="nt">test.foo</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-24-27" id="__codelineno-24-27" name="__codelineno-24-27"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Allows foo command</span><span class="w"></span>
+<a href="#__codelineno-24-28" id="__codelineno-24-28" name="__codelineno-24-28"></a><span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">op</span><span class="w"></span>
+<a href="#__codelineno-24-29" id="__codelineno-24-29" name="__codelineno-24-29"></a><span class="w">  </span><span class="nt">test.*</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-24-30" id="__codelineno-24-30" name="__codelineno-24-30"></a><span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wildcard permission</span><span class="w"></span>
+<a href="#__codelineno-24-31" id="__codelineno-24-31" name="__codelineno-24-31"></a><span class="w">    </span><span class="nt">default</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">op</span><span class="w"></span>
+<a href="#__codelineno-24-32" id="__codelineno-24-32" name="__codelineno-24-32"></a><span class="w">    </span><span class="nt">children</span><span class="p">:</span><span class="w"></span>
+<a href="#__codelineno-24-33" id="__codelineno-24-33" name="__codelineno-24-33"></a><span class="w">      </span><span class="nt">test.foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+</code></pre></div>
+<h2 id="_6">注解</h2>
+<p>如果你不想处理为每个项目创建 <code>plugin.yml</code> 的麻烦，那么有一个方便的小工具专门为你准备的！它叫做插件注释。它叫做 Plugin Annotations。它是一个简单的注释处理器，可以为你自动生成一个正确的 <code>plugin.yml</code>。</p>
+<p>要使用它，只需把它作为一个依赖项添加到你的项目中。</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="nt">&lt;dependency&gt;</span>
+<a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a>  <span class="nt">&lt;groupId&gt;</span>org.spigotmc<span class="nt">&lt;/groupId&gt;</span>
+<a href="#__codelineno-25-3" id="__codelineno-25-3" name="__codelineno-25-3"></a>  <span class="nt">&lt;artifactId&gt;</span>plugin-annotations<span class="nt">&lt;/artifactId&gt;</span>
+<a href="#__codelineno-25-4" id="__codelineno-25-4" name="__codelineno-25-4"></a>  <span class="nt">&lt;version&gt;</span>1.1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+<a href="#__codelineno-25-5" id="__codelineno-25-5" name="__codelineno-25-5"></a>  <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+<a href="#__codelineno-25-6" id="__codelineno-25-6" name="__codelineno-25-6"></a><span class="nt">&lt;/dependency&gt;</span>
+</code></pre></div>
+<p>它使用 spigot-api repo 所在的同一个仓库。</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="nt">&lt;repositories&gt;</span>
+<a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a>  <span class="nt">&lt;repository&gt;</span>
+<a href="#__codelineno-26-3" id="__codelineno-26-3" name="__codelineno-26-3"></a>    <span class="nt">&lt;id&gt;</span>spigot-repo<span class="nt">&lt;/id&gt;</span>
+<a href="#__codelineno-26-4" id="__codelineno-26-4" name="__codelineno-26-4"></a>    <span class="nt">&lt;url&gt;</span>https://hub.spigotmc.org/nexus/content/repositories/snapshots/<span class="nt">&lt;/url&gt;</span>
+<a href="#__codelineno-26-5" id="__codelineno-26-5" name="__codelineno-26-5"></a>  <span class="nt">&lt;/repository&gt;</span>
+<a href="#__codelineno-26-6" id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="nt">&lt;/repositories&gt;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Maven -&gt; Gradle</p>
+<p>在 <code>pom.xml</code> 目录下执行：
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a>gradle init --type pom
+</code></pre></div></p>
+</div>
+<p>关于这个工具的更多信息可以在其<a href="https://www.spigotmc.org/wiki/spigot-plugin-yml-annotations/">维基</a>上找到。</p>
+<p><a class="md-button" href="https://www.spigotmc.org/wiki/plugin-yml/">跳转至官网原文 <span class="twemoji"><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8v2m9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5Z"></path></svg></span></a></p>
+</article>
+</div>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 命令别名" class="md-footer__link md-footer__link--prev" href="../command-alias/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                上一页
+              </span>
+              命令别名
+            </div>
+</div>
+</a>
+<a aria-label="下一页: 创建一个简单的命令" class="md-footer__link md-footer__link--next" href="../create-a-simple-command/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                下一页
+              </span>
+              创建一个简单的命令
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2012 - 2022 SpigotMC Pty. Ltd. &amp;&amp; Ling Luo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/lingluo-hub" rel="noopener" target="_blank" title="Ling Luo on GitHub">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes", "navigation.tabs", "navigation.top", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.078830c0.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom"});})</script></body>
+</html>
